@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --bg: 10 10 12;
+  --panel: 16 16 20;
+  --text: 245 245 247;
+  --muted: 180 180 190;
+  --line: 255 255 255;
+  --accent: 128 90 255;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+* {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
