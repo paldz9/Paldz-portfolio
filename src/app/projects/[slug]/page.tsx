@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { projects } from "@/content/portfolio";
 import { Reveal } from "@/components/Reveal";
 import { Badge } from "@/components/ui";
+import { FacebookVideoCard } from "@/components/FacebookVideoCard";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -82,53 +83,84 @@ export default async function ProjectPage({
       </section>
 
       {/* ── Video / Cover ── */}
-      <Reveal>
-        <div className="mb-14 overflow-hidden rounded-2xl bg-[#0D0D0B]">
-          {videoUrl ? (
-            isMp4 ? (
-              <video
-                className="block w-full"
-                controls
-                playsInline
-                preload="metadata"
-              >
-                <source src={videoUrl} type="video/mp4" />
-              </video>
-            ) : isCloudinaryPlayer ? (
-              <iframe
-                src={videoUrl}
-                title={project.title}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  height: "auto",
-                  aspectRatio: "640 / 360",
-                }}
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <div className="relative aspect-video">
+      {project.videos ? (
+        <Reveal>
+          <div className="mb-14 columns-2 sm:columns-3 gap-3">
+            {project.videos.map((src, i) =>
+              /\.mp4(\?.*)?$/i.test(src) ? (
+                <div
+                  key={i}
+                  className="mb-3 break-inside-avoid overflow-hidden rounded-2xl bg-[#0D0D0B]"
+                >
+                  <video
+                    className="block w-full"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={src} type="video/mp4" />
+                  </video>
+                </div>
+              ) : (
+                <div key={i} className="mb-3 break-inside-avoid">
+                  <FacebookVideoCard
+                    src={src}
+                    title={`${project.title} — clip ${i + 1}`}
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </Reveal>
+      ) : (
+        <Reveal>
+          <div className="mb-14 overflow-hidden rounded-2xl bg-[#0D0D0B]">
+            {videoUrl ? (
+              isMp4 ? (
+                <video
+                  className="block w-full"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={videoUrl} type="video/mp4" />
+                </video>
+              ) : isCloudinaryPlayer ? (
                 <iframe
-                  className="absolute inset-0 size-full"
                   src={videoUrl}
                   title={project.title}
-                  allow="autoplay; fullscreen; accelerometer; encrypted-media; picture-in-picture"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "auto",
+                    aspectRatio: "640 / 360",
+                  }}
+                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                   allowFullScreen
                 />
-              </div>
-            )
-          ) : (
-            <div
-              className="aspect-[16/9]"
-              style={{
-                background: `radial-gradient(ellipse at 25% 25%, ${from}55, transparent 55%), radial-gradient(ellipse at 75% 75%, ${to}55, transparent 55%), linear-gradient(135deg, ${from}33, ${to}33)`,
-              }}
-              aria-label={project.cover.alt}
-            />
-          )}
-        </div>
-      </Reveal>
+              ) : (
+                <div className="relative aspect-video">
+                  <iframe
+                    className="absolute inset-0 size-full"
+                    src={videoUrl}
+                    title={project.title}
+                    allow="autoplay; fullscreen; accelerometer; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              )
+            ) : (
+              <div
+                className="aspect-[16/9]"
+                style={{
+                  background: `radial-gradient(ellipse at 25% 25%, ${from}55, transparent 55%), radial-gradient(ellipse at 75% 75%, ${to}55, transparent 55%), linear-gradient(135deg, ${from}33, ${to}33)`,
+                }}
+                aria-label={project.cover.alt}
+              />
+            )}
+          </div>
+        </Reveal>
+      )}
 
       {/* ── Details ── */}
       <Reveal delay={80}>

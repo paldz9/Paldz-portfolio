@@ -1,17 +1,33 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/content/portfolio";
 
 export function ProjectCard({ project }: { project: Project }) {
   const [from, to] = project.cover.gradient;
+  const thumb = project.cover.thumbnail;
+
   return (
     <Link href={`/projects/${project.slug}`} className="group block">
       <div
         className="relative aspect-[3/2] overflow-hidden rounded-xl mb-4 transition-all duration-300 group-hover:opacity-90"
-        style={{
-          background: `radial-gradient(ellipse at 30% 30%, ${from}66, transparent 60%), radial-gradient(ellipse at 70% 70%, ${to}66, transparent 60%), linear-gradient(135deg, ${from}33, ${to}33)`,
-        }}
+        style={
+          thumb
+            ? undefined
+            : {
+                background: `radial-gradient(ellipse at 30% 30%, ${from}66, transparent 60%), radial-gradient(ellipse at 70% 70%, ${to}66, transparent 60%), linear-gradient(135deg, ${from}33, ${to}33)`,
+              }
+        }
         aria-label={project.cover.alt}
       >
+        {thumb && (
+          <Image
+            src={thumb}
+            alt={project.cover.alt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+          />
+        )}
         <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-250 group-hover:opacity-100">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#0D0D0B] backdrop-blur-sm">
             Open project →
