@@ -1,42 +1,37 @@
 import Link from "next/link";
 import type { Project } from "@/content/portfolio";
-import { Badge } from "@/components/ui";
 
 export function ProjectCard({ project }: { project: Project }) {
   const [from, to] = project.cover.gradient;
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className="group rounded-2xl border border-white/10 bg-white/[0.02] p-4 transition hover:bg-white/[0.04]"
-    >
+    <Link href={`/projects/${project.slug}`} className="group block">
       <div
-        className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10"
+        className="relative aspect-[3/2] overflow-hidden rounded-xl mb-4 transition-all duration-300 group-hover:opacity-90"
         style={{
-          background: `radial-gradient(1200px circle at 20% 10%, ${from}55, transparent 40%), radial-gradient(900px circle at 80% 70%, ${to}55, transparent 45%), linear-gradient(135deg, ${from}22, ${to}22)`,
+          background: `radial-gradient(ellipse at 30% 30%, ${from}66, transparent 60%), radial-gradient(ellipse at 70% 70%, ${to}66, transparent 60%), linear-gradient(135deg, ${from}33, ${to}33)`,
         }}
         aria-label={project.cover.alt}
       >
-        <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-          <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/0 to-white/10" />
+        <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-250 group-hover:opacity-100">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#0D0D0B] backdrop-blur-sm">
+            Open project →
+          </span>
         </div>
       </div>
 
-      <div className="mt-4 flex items-start justify-between gap-4">
+      <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="truncate text-sm font-semibold text-white/95">
+          <p className="truncate text-sm font-semibold text-[#0D0D0B] transition-colors duration-150 group-hover:text-[#17381D]">
             {project.title}
-          </div>
-          <div className="mt-1 text-sm text-white/60">
-            {project.type} • {project.year}
-          </div>
+          </p>
+          <p className="mt-0.5 text-sm text-[#8C8C8C]">
+            {project.type} · {project.year}
+          </p>
         </div>
-        <Badge className="shrink-0">{project.role}</Badge>
-      </div>
-
-      <div className="mt-3 line-clamp-2 text-sm text-white/70">
-        {project.summary}
+        <span className="shrink-0 rounded-full bg-[#17381D]/[0.07] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#17381D]">
+          {project.role.split(" • ")[0]}
+        </span>
       </div>
     </Link>
   );
 }
-

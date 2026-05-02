@@ -19,10 +19,7 @@ export type Project = {
   };
   summary: string;
   highlights: string[];
-  links?: {
-    label: string;
-    href: string;
-  }[];
+  links?: { label: string; href: string }[];
   videoEmbedUrl?: string;
 };
 
@@ -58,26 +55,53 @@ export const profile = {
 
 export const projects: Project[] = [
   {
-    slug: "neon-reel-2026",
-    title: "Neon Showreel",
+    slug: "wgs-growth",
+    title: "WGS — Growth",
     type: "Motion Graphics",
     year: "2026",
+    role: "Motion Designer",
+    tools: [
+      "After Effects",
+      "ElevenLabs text to speech",
+      "ElevenLabs Music Generator",
+    ],
+    tags: ["Motion Graphics", "Kinetic Type", "Brand Film"],
+    cover: {
+      alt: "WGS Growth — dynamic motion graphics with kinetic typography",
+      gradient: ["#17381D", "#2A5C30"],
+    },
+    summary:
+      "A kinetic motion graphics piece for WGS, capturing the energy of growth through typography, fluid transitions, and a tight audio-visual rhythm.",
+    highlights: [
+      "Kinetic typography synchronized frame-perfect to audio",
+      "Custom sound design to enhance the motion’s impact and pacing",
+      "Seamless scene transitions using brand motion language",
+      "Color graded and delivered for digital platform distribution",
+    ],
+    videoEmbedUrl:
+      "https://player.cloudinary.com/embed/?cloud_name=deuwal5fr&public_id=WGS_-_Growth_uttjty",
+  },
+  {
+    slug: "neon-reel-2026",
+    title: "Essential Funding Inc. — Logo Animation",
+    type: "Motion Graphics",
+    year: "2024",
     role: "Motion Designer • Editor",
     tools: ["After Effects", "Premiere Pro"],
-    tags: ["Showreel", "Kinetic type", "Transitions"],
+    tags: ["Logo Animation", "Icon Transitions", "Glow FX"],
     cover: {
       alt: "Abstract neon gradients with dynamic light streaks",
       gradient: ["#7C3AED", "#22D3EE"],
     },
     summary:
-      "A fast-paced motion reel focused on transitions, typography, and punchy rhythm edits.",
+      "A short, fast-paced logo animation for Essential Funding Inc. featuring transitioning icons and glowing sprite animations.",
     highlights: [
-      "Designed modular motion system for quick iteration",
-      "Built reusable animation presets for consistency",
-      "Color pipeline tuned for platform compression",
+      "Fast-paced logo reveal built for punchy brand impact",
+      "Icon-to-icon transitions timed tightly for rhythm and clarity",
+      "Glowing sprite animations layered for depth and energy",
     ],
-    links: [{ label: "Watch", href: "https://youtube.com/" }],
-    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    videoEmbedUrl:
+      "https://res.cloudinary.com/deuwal5fr/video/upload/v1777723729/logo_animation_upfk8y.mp4",
   },
   {
     slug: "brand-kit-social-pack",
@@ -106,7 +130,11 @@ export const projects: Project[] = [
     type: "Video Editing",
     year: "2025",
     role: "Editor",
-    tools: ["Premiere Pro", "DaVinci Resolve"],
+    tools: [
+      "DaVinci Resolve",
+      "ElevenLabs text to speech",
+      "ElevenLabs Music Generator",
+    ],
     tags: ["Reels", "TikTok", "Captions"],
     cover: {
       alt: "Dark gradient with energetic accent shapes",
@@ -121,4 +149,3 @@ export const projects: Project[] = [
     ],
   },
 ];
-
