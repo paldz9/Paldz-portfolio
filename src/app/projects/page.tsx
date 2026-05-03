@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <div>
       {/* Header */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-20">
         <div className="anim-1">
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#17381D]">
             Work
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
 
       {/* Grid */}
       <div className="border-t border-black/[0.06] pt-12">
-        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.slug} delay={i * 70}>
               <ProjectCard project={p} />

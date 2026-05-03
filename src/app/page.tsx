@@ -142,7 +142,7 @@ export default function HomePage() {
             <Reveal key={p.slug} delay={i * 55}>
               <Link
                 href={`/projects/${p.slug}`}
-                className="project-row group flex items-center gap-6 rounded-xl px-3 py-6 md:gap-10 md:py-7"
+                className="project-row group flex items-center gap-3 rounded-xl px-3 py-5 md:gap-10 md:py-7"
               >
                 <span className="w-7 shrink-0 font-mono text-xs tabular-nums text-[#8C8C8C]">
                   {String(i + 1).padStart(2, "0")}
@@ -155,14 +155,14 @@ export default function HomePage() {
                   <p className="mt-0.5 text-sm text-[#8C8C8C]">{p.type}</p>
                 </div>
 
-                <div className="flex shrink-0 items-center gap-6">
+                <div className="flex shrink-0 items-center gap-3 md:gap-6">
                   <span className="hidden text-sm tabular-nums text-[#8C8C8C] md:block">
                     {p.year}
                   </span>
                   <span className="rounded-full bg-[#17381D]/[0.07] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#17381D]">
                     {p.type.split(" ")[0]}
                   </span>
-                  <span className="text-[#8C8C8C] opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+                  <span className="hidden text-[#8C8C8C] opacity-0 transition-opacity duration-150 group-hover:opacity-100 md:block">
                     →
                   </span>
                 </div>
@@ -175,9 +175,9 @@ export default function HomePage() {
       {/* ════════════════════════════════════
           SERVICES + PROCESS
       ════════════════════════════════════ */}
-      <section className="border-t border-black/[0.06] py-24">
+      <section className="border-t border-black/[0.06] py-16 md:py-24">
         <Reveal>
-          <div className="grid gap-16 md:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
             {/* Services */}
             <div>
               <p className="mb-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#17381D]">

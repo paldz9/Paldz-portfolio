@@ -53,7 +53,7 @@ export default async function ProjectPage({
       </div>
 
       {/* ── Header ── */}
-      <section className="py-10 md:py-14">
+      <section className="py-8 md:py-14">
         <div className="anim-2 flex flex-wrap gap-2 mb-6">
           <Badge>{project.type}</Badge>
           <Badge>{project.year}</Badge>
@@ -85,7 +85,7 @@ export default async function ProjectPage({
       {/* ── Video / Cover ── */}
       {project.videos ? (
         <Reveal>
-          <div className="mb-14 columns-2 sm:columns-3 gap-3">
+          <div className="mb-14 columns-1 sm:columns-2 md:columns-3 gap-3">
             {project.videos.map((src, i) =>
               /\.mp4(\?.*)?$/i.test(src) ? (
                 <div
@@ -164,7 +164,7 @@ export default async function ProjectPage({
 
       {/* ── Details ── */}
       <Reveal delay={80}>
-        <div className="grid gap-12 md:grid-cols-[1fr_280px]">
+        <div className="grid gap-8 md:gap-12 md:grid-cols-[1fr_280px]">
           {/* Highlights */}
           <div>
             <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#17381D]">

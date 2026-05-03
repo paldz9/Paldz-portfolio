@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="min-h-dvh antialiased">
         <Nav />
-        <main className="mx-auto w-full max-w-6xl px-4 pb-32 pt-20 md:px-8">
+        <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-20 md:px-8 md:pb-32">
           {children}
         </main>
         <Footer />
