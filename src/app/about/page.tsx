@@ -96,6 +96,21 @@ export default function AboutPage() {
             Video Editor · Creative Strategist · Graphic Artist — 10+ years
             making content that moves people and converts audiences.
           </p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="/Zaldy Caoile_Resume 2026_compressed.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-full bg-[#17381D] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-85"
+            >
+              Download CV ↓
+            </a>
+            <a
+              href={`mailto:${profile.email}`}
+              className="text-sm text-[#8C8C8C] transition-colors hover:text-[#0D0D0B]"
+            >
+              {profile.email}
+            </a>
+          </div>
         </div>
       </section>
 

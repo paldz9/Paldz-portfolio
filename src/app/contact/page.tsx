@@ -50,6 +50,13 @@ export default function ContactPage() {
                 Usually back within 24 hours.
               </p>
 
+              <a
+                href={`tel:${profile.phone}`}
+                className="mt-4 inline-block text-sm text-[#8C8C8C] transition-colors hover:text-[#0D0D0B]"
+              >
+                {profile.phone}
+              </a>
+
               <div className="mt-10">
                 <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#17381D]">
                   Open to

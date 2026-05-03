@@ -32,6 +32,7 @@ export const profile = {
   headline: "Video Editor • Graphic Designer • Motion Graphics",
   location: "Philippines",
   email: "paldzproduction@gmail.com",
+  phone: "+63 916 346 2565",
   social: [
     { label: "Facebook", href: "https://www.facebook.com/paldz.pogi.sagad" },
     { label: "Instagram", href: "https://www.instagram.com/master.paldz/" },
