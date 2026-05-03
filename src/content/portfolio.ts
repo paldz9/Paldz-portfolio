@@ -76,7 +76,7 @@ export const projects: Project[] = [
     cover: {
       alt: "Essential Funding Inc. social media graphic design portfolio",
       gradient: ["#1C3D5A", "#2E86C1"],
-      thumbnail: "/assets/EF%20Posters/Creative%20Campaign/superhero_rev1.jpg",
+      thumbnail: "https://res.cloudinary.com/deuwal5fr/image/upload/v1777793303/superhero_rev1_lfsf4t.jpg",
     },
     summary:
       "A comprehensive social media design system for Essential Funding Inc. — spanning creative campaigns, motivational quote cards, industry-specific funding graphics, holiday posts, and minimalist brand visuals.",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     cover: {
       alt: "WGS and AKT internal brand design and employee apparel mockups",
       gradient: ["#1A1A2E", "#16213E"],
-      thumbnail: "/assets/WGS%20-%20AKT%20Graphic%20Designs/Jacket%20Design/mock%20up%20ver%202.jpg",
+      thumbnail: "https://res.cloudinary.com/deuwal5fr/image/upload/v1777793347/mock_up_ver_2_n9htos.jpg",
     },
     summary:
       "Internal brand design for WGS and AKT — company announcements, employee recognition, holiday posters, and branded apparel concepts for staff wear only (hoodies, jackets, and shirts), not sold as merchandise.",
