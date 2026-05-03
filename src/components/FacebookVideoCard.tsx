@@ -47,7 +47,7 @@ export function FacebookVideoCard({
               Preview unavailable
             </p>
             <p className="text-[12px] leading-relaxed text-white/40">
-              This video can't be embedded.
+              This video can&apos;t be embedded.
               <br />
               Watch it directly on Facebook.
             </p>
