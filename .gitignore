@@ -6,3 +6,6 @@ dist/
 *.log
 .env*
 
+# Gallery images are too large for Netlify (430MB) — host on Cloudinary instead
+public/assets/
+

@@ -1,43 +1,72 @@
-import fs from "fs";
-import path from "path";
+import { cache } from "react";
+
+const CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME ?? "deuwal5fr";
+const API_KEY = process.env.CLOUDINARY_API_KEY ?? "";
+const API_SECRET = process.env.CLOUDINARY_API_SECRET ?? "";
 
 export type GalleryCategory = {
   name: string;
   images: string[];
 };
 
-const IMAGE_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
+function authHeader() {
+  const creds = Buffer.from(`${API_KEY}:${API_SECRET}`).toString("base64");
+  return { Authorization: `Basic ${creds}` };
+}
 
-function collectImages(dir: string, urlPrefix: string): string[] {
-  const items = fs.readdirSync(dir, { withFileTypes: true });
-  const images: string[] = [];
-  for (const item of items) {
-    const itemUrl = `${urlPrefix}/${encodeURIComponent(item.name)}`;
-    if (item.isDirectory()) {
-      images.push(...collectImages(path.join(dir, item.name), itemUrl));
-    } else if (IMAGE_RE.test(item.name)) {
-      images.push(itemUrl);
+async function getSubfolders(folderPath: string): Promise<string[]> {
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders/${encodeURIComponent(folderPath)}`,
+    { headers: authHeader(), next: { revalidate: 3600 } }
+  );
+  if (!res.ok) return [];
+  const data = await res.json();
+  return (data.folders ?? []).map((f: { name: string }) => f.name);
+}
+
+async function getImages(prefix: string): Promise<string[]> {
+  const urls: string[] = [];
+  let nextCursor: string | undefined;
+
+  do {
+    const params = new URLSearchParams({
+      prefix: `${prefix}/`,
+      type: "upload",
+      max_results: "500",
+      resource_type: "image",
+    });
+    if (nextCursor) params.set("next_cursor", nextCursor);
+
+    const res = await fetch(
+      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/image?${params}`,
+      { headers: authHeader(), next: { revalidate: 3600 } }
+    );
+    if (!res.ok) break;
+
+    const data = await res.json();
+    for (const r of data.resources ?? []) {
+      urls.push(r.secure_url as string);
     }
-  }
-  return images;
+    nextCursor = data.next_cursor;
+  } while (nextCursor);
+
+  return urls;
 }
 
-export function getGalleryCategories(galleryFolder: string): GalleryCategory[] {
-  const base = path.join(process.cwd(), "public", "assets", galleryFolder);
-  if (!fs.existsSync(base)) return [];
+export const getGalleryCategories = cache(async function (
+  galleryFolder: string
+): Promise<GalleryCategory[]> {
+  if (!API_KEY || !API_SECRET) return [];
 
-  const baseUrl = `/assets/${encodeURIComponent(galleryFolder)}`;
-  const items = fs.readdirSync(base, { withFileTypes: true });
+  const subfolders = await getSubfolders(galleryFolder);
+  if (!subfolders.length) return [];
 
-  return items
-    .filter((item) => item.isDirectory())
-    .map((item) => {
-      const catDir = path.join(base, item.name);
-      const catUrl = `${baseUrl}/${encodeURIComponent(item.name)}`;
-      return {
-        name: item.name,
-        images: collectImages(catDir, catUrl),
-      };
-    })
-    .filter((cat) => cat.images.length > 0);
-}
+  const categories = await Promise.all(
+    subfolders.map(async (sub) => ({
+      name: sub,
+      images: await getImages(`${galleryFolder}/${sub}`),
+    }))
+  );
+
+  return categories.filter((c) => c.images.length > 0);
+});

@@ -42,7 +42,7 @@ export default async function ProjectPage({
   const isCloudinaryPlayer = videoUrl?.includes("player.cloudinary.com");
   const isMp4 = !!videoUrl && /\.mp4(\?.*)?$/i.test(videoUrl);
   const categories = project.galleryFolder
-    ? getGalleryCategories(project.galleryFolder)
+    ? await getGalleryCategories(project.galleryFolder)
     : null;
 
   return (
