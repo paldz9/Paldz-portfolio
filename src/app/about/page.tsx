@@ -22,10 +22,30 @@ const experience = [
   },
   {
     role: "Video Editor & Creative Specialist",
-    company: "AKT Services / WGS",
+    company: "WGS",
     period: "2023 – Present",
     items: [
-      "Create end-to-end creative assets including videos and graphic posters",
+      "Create end-to-end creative assets including videos and graphic posters for social media",
+      "Develop consistent visual branding across platforms",
+      "Produce promotional and internal content aligned with company messaging",
+    ],
+  },
+  {
+    role: "Video Editor & Creative Specialist",
+    company: "AKT Services",
+    period: "2023 – 2025",
+    items: [
+      "Create end-to-end creative assets including videos and graphic posters for social media",
+      "Develop consistent visual branding across platforms",
+      "Produce promotional and internal content aligned with company messaging",
+    ],
+  },
+  {
+    role: "Video Editor & Creative Specialist",
+    company: "Proto Financial",
+    period: "2026 – Present",
+    items: [
+      "Create end-to-end creative assets including videos and graphic posters for social media",
       "Develop consistent visual branding across platforms",
       "Produce promotional and internal content aligned with company messaging",
     ],
@@ -299,8 +319,8 @@ export default function AboutPage() {
             I&apos;m ready.
           </h2>
           <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#8C8C8C]">
-            Tell me what you need — platform, deadline, style references. I'll
-            come back with a plan and quote.
+            Tell me what you need — platform, deadline, style references.
+            I&apos;ll come back with a plan and quote.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-5">
             <Link
