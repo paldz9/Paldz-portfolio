@@ -24,17 +24,18 @@ export type Project = {
   videoEmbedUrl?: string;
   videos?: string[];
   videosAspect?: "portrait" | "landscape";
+  galleryFolder?: string;
 };
 
 export const profile = {
   name: "Paldz",
   headline: "Video Editor • Graphic Designer • Motion Graphics",
   location: "Philippines",
-  email: "hello@example.com",
+  email: "paldzproduction@gmail.com",
   social: [
-    { label: "Behance", href: "https://behance.net/" },
-    { label: "Instagram", href: "https://instagram.com/" },
-    { label: "YouTube", href: "https://youtube.com/" },
+    { label: "Facebook", href: "https://www.facebook.com/paldz.pogi.sagad" },
+    { label: "Instagram", href: "https://www.instagram.com/master.paldz/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/master-paldz/" },
   ],
   services: [
     {
@@ -57,6 +58,52 @@ export const profile = {
 } as const;
 
 export const projects: Project[] = [
+  {
+    slug: "ef-posters",
+    title: "Essential Funding Inc. — Social Media Graphics",
+    type: "Graphic Design",
+    year: "2024–2026",
+    role: "Designer",
+    tools: ["Photoshop", "Nano Banana"],
+    tags: ["Social Media", "Marketing", "Campaigns", "Branding"],
+    cover: {
+      alt: "Essential Funding Inc. social media graphic design portfolio",
+      gradient: ["#1C3D5A", "#2E86C1"],
+      thumbnail: "/assets/EF%20Posters/Creative%20Campaign/superhero_rev1.jpg",
+    },
+    summary:
+      "A comprehensive social media design system for Essential Funding Inc. — spanning creative campaigns, motivational quote cards, industry-specific funding graphics, holiday posts, and minimalist brand visuals.",
+    highlights: [
+      "300+ graphics across 6 content categories",
+      "Consistent brand language adapted across industries and occasions",
+      "Campaign-ready templates built for rapid weekly deployment",
+      "Minimalist and typography-led designs for high-impact brand recall",
+    ],
+    galleryFolder: "EF Posters",
+  },
+  {
+    slug: "wgs-akt-designs",
+    title: "WGS & AKT — Internal Brand & Apparel Design",
+    type: "Branding",
+    year: "2024–2026",
+    role: "Designer",
+    tools: ["Photoshop", "Sketch Up", "V-Ray", "Nano Banana"],
+    tags: ["Branding", "Apparel", "Internal Comms", "Merch"],
+    cover: {
+      alt: "WGS and AKT internal brand design and apparel mockups",
+      gradient: ["#1A1A2E", "#16213E"],
+      thumbnail: "/assets/WGS%20-%20AKT%20Graphic%20Designs/Jacket%20Design/mock%20up%20ver%202.jpg",
+    },
+    summary:
+      "Internal brand and merchandise design for WGS and AKT — covering company announcements, employee recognition, holiday posters, and full apparel collections including hoodies, jackets, and shirts.",
+    highlights: [
+      "Dual-branded designs consistently delivered for both WGS and AKT identities",
+      "Full apparel line: hoodies, jackets, and T-shirts from concept to mockup",
+      "Weekly announcement and milestone graphics for internal communications",
+      "Holiday and event posters maintaining brand cohesion across occasions",
+    ],
+    galleryFolder: "WGS - AKT Graphic Designs",
+  },
   {
     slug: "marketing-reels",
     title: "Scroll-Stopping Marketing Reels",
@@ -293,48 +340,53 @@ export const projects: Project[] = [
       "https://res.cloudinary.com/deuwal5fr/video/upload/v1777723729/logo_animation_upfk8y.mp4",
   },
   {
-    slug: "brand-kit-social-pack",
-    title: "Brand Kit + Social Pack",
-    type: "Graphic Design",
-    year: "2025",
-    role: "Designer",
-    tools: ["Photoshop", "Illustrator"],
-    tags: ["Branding", "Templates", "Social"],
+    slug: "ragnarok-universal-server",
+    title: "Ragnarok Universal Server — Cinematic Trailer",
+    type: "Motion Graphics",
+    year: "2020",
+    role: "Editor • Motion Designer",
+    tools: ["Premiere Pro", "After Effects"],
+    tags: ["Gaming", "Cinematic", "Trailer", "VFX"],
     cover: {
-      alt: "Bold editorial layout with type and shapes",
-      gradient: ["#F97316", "#F43F5E"],
+      alt: "Ragnarok Universal Server cinematic game trailer",
+      gradient: ["#1A0533", "#6B21A8"],
+      thumbnail:
+        "https://res.cloudinary.com/deuwal5fr/video/upload/v1777778857/Ragnarok_Universal_Server_trailer_zrbrwg.jpg",
     },
     summary:
-      "A cohesive identity kit and a ready-to-post social media template set for a small business.",
+      "A cinematic trailer for Ragnarok Universal Server — a private MMORPG server — featuring dramatic pacing, VFX overlays, and an immersive audio-visual build designed to hype the player community.",
     highlights: [
-      "Defined typography + grid rules for speed",
-      "Created 15+ export-ready templates",
-      "Delivered usage notes for non-designers",
+      "Dramatic cinematic pacing built to drive player excitement and server sign-ups",
+      "VFX overlays and motion graphics layered on top of in-game footage",
+      "Audio-synced cuts timed for maximum impact and energy",
+      "Delivered for community distribution across gaming forums and social platforms",
     ],
-    links: [{ label: "Case Study", href: "https://behance.net/" }],
+    videoEmbedUrl:
+      "https://res.cloudinary.com/deuwal5fr/video/upload/v1777778857/Ragnarok_Universal_Server_trailer_zrbrwg.mp4",
   },
   {
-    slug: "shortform-campaign-cutdowns",
-    title: "Short-form Campaign Cutdowns",
+    slug: "coffee-boi",
+    title: "Coffee Boi — Brand Film",
     type: "Video Editing",
-    year: "2025",
+    year: "2022",
     role: "Editor",
-    tools: [
-      "DaVinci Resolve",
-      "ElevenLabs text to speech",
-      "ElevenLabs Music Generator",
-    ],
-    tags: ["Reels", "TikTok", "Captions"],
+    tools: ["Premiere Pro", "After Effects"],
+    tags: ["Brand Film", "Product", "Lifestyle", "Short Film"],
     cover: {
-      alt: "Dark gradient with energetic accent shapes",
-      gradient: ["#111827", "#A3E635"],
+      alt: "Coffee Boi brand promotional film",
+      gradient: ["#3B1F0A", "#92400E"],
+      thumbnail:
+        "https://res.cloudinary.com/deuwal5fr/video/upload/v1777779054/Coffee_Boi_c8g6hj.jpg",
     },
     summary:
-      "Cut a long-form campaign into multiple vertical assets with consistent hooks and pacing.",
+      "A short brand film for Coffee Boi — a warm, aesthetic product video that captures the vibe and identity of the brand through moody visuals, smooth cuts, and a lifestyle-first narrative.",
     highlights: [
-      "Built hook-first structure for retention",
-      "Caption styling optimized for readability",
-      "Delivered variants for A/B testing",
+      "Warm, moody color grade matching the brand's cozy aesthetic",
+      "Lifestyle-driven storytelling putting the product experience first",
+      "Tight edit rhythm designed to hold attention in short-form contexts",
+      "Delivered as a versatile brand asset for social and promotional use",
     ],
+    videoEmbedUrl:
+      "https://res.cloudinary.com/deuwal5fr/video/upload/v1777779054/Coffee_Boi_c8g6hj.mp4",
   },
 ];

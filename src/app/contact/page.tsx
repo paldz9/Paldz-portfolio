@@ -108,6 +108,7 @@ export default function ContactPage() {
                     Project type
                     <input
                       name="Project type"
+                      required
                       className="rounded-xl border border-black/[0.08] bg-white px-4 py-3 text-sm text-[#0D0D0B] placeholder-[#8C8C8C]/50 outline-none transition focus:border-[#17381D]/40 focus:ring-2 focus:ring-[#17381D]/8"
                       placeholder="Video / Motion / Design"
                     />
@@ -116,6 +117,7 @@ export default function ContactPage() {
                     Deadline
                     <input
                       name="Deadline"
+                      required
                       className="rounded-xl border border-black/[0.08] bg-white px-4 py-3 text-sm text-[#0D0D0B] placeholder-[#8C8C8C]/50 outline-none transition focus:border-[#17381D]/40 focus:ring-2 focus:ring-[#17381D]/8"
                       placeholder="e.g. June 30"
                     />
@@ -126,6 +128,7 @@ export default function ContactPage() {
                   Budget range
                   <input
                     name="Budget"
+                    required
                     className="rounded-xl border border-black/[0.08] bg-white px-4 py-3 text-sm text-[#0D0D0B] placeholder-[#8C8C8C]/50 outline-none transition focus:border-[#17381D]/40 focus:ring-2 focus:ring-[#17381D]/8"
                     placeholder="e.g. $300–500"
                   />
@@ -136,6 +139,7 @@ export default function ContactPage() {
                   <textarea
                     name="Details"
                     rows={5}
+                    required
                     className="resize-none rounded-xl border border-black/[0.08] bg-white px-4 py-3 text-sm text-[#0D0D0B] placeholder-[#8C8C8C]/50 outline-none transition focus:border-[#17381D]/40 focus:ring-2 focus:ring-[#17381D]/8"
                     placeholder="Links, references, duration, platform, style…"
                   />

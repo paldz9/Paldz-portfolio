@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import { projects } from "@/content/portfolio";
+import { getGalleryCategories } from "@/lib/gallery";
 import { Reveal } from "@/components/Reveal";
 import { Badge } from "@/components/ui";
 import { FacebookVideoCard } from "@/components/FacebookVideoCard";
@@ -39,6 +40,9 @@ export default async function ProjectPage({
   const videoUrl = project.videoEmbedUrl;
   const isCloudinaryPlayer = videoUrl?.includes("player.cloudinary.com");
   const isMp4 = !!videoUrl && /\.mp4(\?.*)?$/i.test(videoUrl);
+  const categories = project.galleryFolder
+    ? getGalleryCategories(project.galleryFolder)
+    : null;
 
   return (
     <div>
@@ -82,8 +86,35 @@ export default async function ProjectPage({
         )}
       </section>
 
-      {/* ── Video / Cover ── */}
-      {project.videos ? (
+      {/* ── Gallery (image projects) ── */}
+      {categories ? (
+        <div className="mb-14 space-y-16">
+          {categories.map((cat) => (
+            <div key={cat.name}>
+              <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#17381D]">
+                {cat.name}
+              </p>
+              <div className="columns-2 sm:columns-3 md:columns-4 gap-2">
+                {cat.images.map((src, i) => (
+                  <div
+                    key={i}
+                    className="mb-2 break-inside-avoid overflow-hidden rounded-xl bg-[#F0F0EE]"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={src}
+                      alt={`${cat.name} ${i + 1}`}
+                      loading="lazy"
+                      className="block w-full h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : project.videos ? (
+        /* ── Video collection ── */
         <Reveal>
           <div className="mb-14 columns-1 sm:columns-2 md:columns-3 gap-3">
             {project.videos.map((src, i) =>
@@ -113,6 +144,7 @@ export default async function ProjectPage({
           </div>
         </Reveal>
       ) : (
+        /* ── Single video / cover ── */
         <Reveal>
           <div className="mb-14 overflow-hidden rounded-2xl bg-[#0D0D0B]">
             {videoUrl ? (
@@ -231,7 +263,7 @@ export default async function ProjectPage({
         </div>
       </Reveal>
 
-      {/* ── Next step CTA ── */}
+      {/* ── CTA ── */}
       <Reveal delay={120}>
         <div className="mt-20 border-t border-black/[0.06] pt-12">
           <p className="text-[15px] text-[#8C8C8C]">
