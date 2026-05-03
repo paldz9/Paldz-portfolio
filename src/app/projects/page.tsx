@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
   title: "Projects",
-  description: "Editing, motion graphics, and graphic design work.",
+  description: "Editing, motion graphics, graphic design, and web design work.",
 };
 
 export default function ProjectsPage() {
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-[#8C8C8C]">
-            Selected work across editing, motion graphics, and design.
+            Selected work across editing, motion graphics, design, and web.
           </p>
         </div>
       </section>

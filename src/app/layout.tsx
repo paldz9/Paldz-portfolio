@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     template: "%s • Paldz",
   },
   description:
-    "Video editor, graphic designer, and motion graphic designer. Showreel, projects, and services.",
+    "Video editor, motion graphics, graphic designer, and web designer. Showreel, projects, and services.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
   ),
   openGraph: {
     title: "Paldz — Visual Creative Portfolio",
     description:
-      "Video editor, graphic designer, and motion graphic designer. Showreel, projects, and services.",
+      "Video editor, motion graphics, graphic designer, and web designer. Showreel, projects, and services.",
     type: "website",
   },
   robots: { index: true, follow: true },

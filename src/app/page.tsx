@@ -35,8 +35,8 @@ export default function HomePage() {
 
         {/* Sub-line */}
         <p className="anim-3 mt-8 max-w-xs text-[15px] leading-relaxed text-[#8C8C8C] md:max-w-sm">
-          Video editing, motion graphics, and brand design — built for impact
-          and made to move.
+          Video editing, motion graphics, graphic design, and web design —
+          built for impact and made to move.
         </p>
 
         {/* CTAs */}

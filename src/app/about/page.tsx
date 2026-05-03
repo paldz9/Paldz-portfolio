@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 export const metadata = {
   title: "About",
   description:
-    "Zaldy 'Paldz' Caoile — Video Editor, Creative Strategist, and Graphic Artist with 10+ years of experience.",
+    "Zaldy 'Paldz' Caoile — Video Editor, Motion Graphics, Graphic Designer, and Web Designer with 10+ years of experience.",
 };
 
 const experience = [
@@ -82,6 +82,8 @@ const skills = [
   "Sound Design, Mixing & Audio Cleanup",
   "Social Media Content Creation",
   "Brand Consistency & Visual Identity",
+  "Web Design & Development",
+  "UI Design & Landing Pages",
 ];
 
 const tools = [
@@ -89,6 +91,8 @@ const tools = [
   { name: "Adobe After Effects", note: "Motion graphics & VFX" },
   { name: "Adobe Premiere Pro", note: "Long-form editing & color" },
   { name: "Adobe Photoshop", note: "Graphic design & marketing assets" },
+  { name: "Adobe Illustrator", note: "Brand assets & vector graphics" },
+  { name: "React + Tailwind CSS", note: "Web design & development" },
 ];
 
 const workStyle = [
@@ -113,8 +117,8 @@ export default function AboutPage() {
             <span className="text-[#17381D]">— Paldz</span>
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[#8C8C8C]">
-            Video Editor · Creative Strategist · Graphic Artist — 10+ years
-            making content that moves people and converts audiences.
+            Video Editor · Motion Graphics · Graphic Designer · Web Design —
+            10+ years making content that moves people and converts audiences.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
@@ -145,10 +149,10 @@ export default function AboutPage() {
                 Summary
               </p>
               <p className="max-w-2xl text-[17px] leading-relaxed text-[#0D0D0B]">
-                Creative Video Editor, Creative Strategist, and Graphic Artist
-                with{" "}
+                Creative Video Editor, Motion Graphics Artist, Graphic Designer,
+                and Web Designer with{" "}
                 <span className="font-semibold">10+ years of experience</span>{" "}
-                in video editing and graphic design, and{" "}
+                in video editing, graphic design, and web design — and{" "}
                 <span className="font-semibold">
                   8+ years of professional work
                 </span>{" "}
@@ -157,10 +161,11 @@ export default function AboutPage() {
               </p>
               <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-[#8C8C8C]">
                 Specializes in marketing-driven video content, short-form and
-                long-form storytelling, and visually compelling graphic assets.
-                Actively utilizes AI-powered tools to enhance creative quality
-                and speed up workflows. Adept at turning concepts into engaging
-                visual content for social media, marketing, and advertising.
+                long-form storytelling, visually compelling graphic assets, and
+                full website design and development. Actively utilizes
+                AI-powered tools to enhance creative quality and speed up
+                workflows. Adept at turning concepts into engaging visual
+                content for social media, marketing, advertising, and the web.
               </p>
             </div>
 

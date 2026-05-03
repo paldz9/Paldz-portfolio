@@ -3,7 +3,8 @@ export type ProjectType =
   | "Motion Graphics"
   | "Graphic Design"
   | "Branding"
-  | "Social Media";
+  | "Social Media"
+  | "Web Design";
 
 export type Project = {
   slug: string;
@@ -29,7 +30,7 @@ export type Project = {
 
 export const profile = {
   name: "Paldz",
-  headline: "Video Editor • Graphic Designer • Motion Graphics",
+  headline: "Video Editor • Motion Graphics • Graphic Designer • Web Design",
   location: "Philippines",
   email: "paldzproduction@gmail.com",
   phone: "+63 916 346 2565",
@@ -54,6 +55,10 @@ export const profile = {
     {
       title: "Branding",
       items: ["Logo systems", "Style guides", "Pitch decks"],
+    },
+    {
+      title: "Web Design",
+      items: ["Landing pages", "Portfolio sites", "UI design & development"],
     },
   ],
 } as const;
@@ -104,6 +109,33 @@ export const projects: Project[] = [
       "Holiday and event posters maintaining brand cohesion across occasions",
     ],
     galleryFolder: "WGS - AKT Graphic Designs",
+  },
+  {
+    slug: "web-design",
+    title: "Web Design — Client Sites",
+    type: "Web Design",
+    year: "2025",
+    role: "Designer • Developer",
+    tools: ["Photoshop", "Illustrator", "After Effects", "React", "Tailwind CSS"],
+    tags: ["Web Design", "UI/UX", "Brand Identity", "Animation"],
+    cover: {
+      alt: "Web design projects — Marina Woodcrafts and A1 Remodeling",
+      gradient: ["#111111", "#C8A882"],
+    },
+    summary:
+      "Full website design and development for two client brands — Marina Woodcrafts Design Inc. and A1 Remodeling. All visual assets, logos, and UI graphics designed from scratch in Adobe Creative Suite.",
+    highlights: [
+      "Marina Woodcrafts — custom After Effects intro animation featuring a wood-frame door reveal that opens the site",
+      "Marina Woodcrafts — warm, gallery-like layout built to let project photography take center stage",
+      "A1 Remodeling — bold black-and-gold identity system (#111111 + #D4A017) conveying premium quality",
+      "A1 Remodeling — dark mode support with separate logo variants for light and dark backgrounds",
+      "All brand assets — logos, icons, textures, and UI graphics — created entirely in Adobe Photoshop and Illustrator",
+      "Both sites built with React and Tailwind CSS, responsive and mobile-first, deployed on Netlify",
+    ],
+    links: [
+      { label: "Marina Woodcrafts", href: "https://marina-wood-craft.netlify.app/" },
+      { label: "A1 Remodeling", href: "https://a1-remodeling.netlify.app/" },
+    ],
   },
   {
     slug: "marketing-reels",

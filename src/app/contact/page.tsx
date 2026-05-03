@@ -67,6 +67,7 @@ export default function ContactPage() {
                     "Motion graphics",
                     "Graphic design",
                     "Branding",
+                    "Web design",
                   ].map((tag) => (
                     <span
                       key={tag}
