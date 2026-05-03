@@ -33,7 +33,8 @@ export const profile = {
   headline: "Video Editor • Motion Graphics • Graphic Designer • Web Design",
   location: "Philippines",
   email: "paldzproduction@gmail.com",
-  phone: "+63 916 346 2565",
+  whatsapp: { label: "WhatsApp", href: "https://wa.me/639295091316" },
+  viber: { label: "Viber", href: "viber://chat?number=%2B639164762565" },
   social: [
     { label: "Facebook", href: "https://www.facebook.com/paldz.pogi.sagad" },
     { label: "Instagram", href: "https://www.instagram.com/master.paldz/" },
@@ -70,7 +71,7 @@ export const projects: Project[] = [
     type: "Graphic Design",
     year: "2024–2026",
     role: "Designer",
-    tools: ["Photoshop", "Nano Banana"],
+    tools: ["Photoshop", "Sketch Up", "V-Ray", "Nano Banana"],
     tags: ["Social Media", "Marketing", "Campaigns", "Branding"],
     cover: {
       alt: "Essential Funding Inc. social media graphic design portfolio",
@@ -89,22 +90,22 @@ export const projects: Project[] = [
   },
   {
     slug: "wgs-akt-designs",
-    title: "WGS & AKT — Internal Brand & Apparel Design",
+    title: "WGS & AKT — Internal Brand",
     type: "Branding",
     year: "2024–2026",
     role: "Designer",
     tools: ["Photoshop", "Sketch Up", "V-Ray", "Nano Banana"],
-    tags: ["Branding", "Apparel", "Internal Comms", "Merch"],
+    tags: ["Branding", "Employee Apparel", "Internal Comms"],
     cover: {
-      alt: "WGS and AKT internal brand design and apparel mockups",
+      alt: "WGS and AKT internal brand design and employee apparel mockups",
       gradient: ["#1A1A2E", "#16213E"],
       thumbnail: "/assets/WGS%20-%20AKT%20Graphic%20Designs/Jacket%20Design/mock%20up%20ver%202.jpg",
     },
     summary:
-      "Internal brand and merchandise design for WGS and AKT — covering company announcements, employee recognition, holiday posters, and full apparel collections including hoodies, jackets, and shirts.",
+      "Internal brand design for WGS and AKT — company announcements, employee recognition, holiday posters, and branded apparel concepts for staff wear only (hoodies, jackets, and shirts), not sold as merchandise.",
     highlights: [
       "Dual-branded designs consistently delivered for both WGS and AKT identities",
-      "Full apparel line: hoodies, jackets, and T-shirts from concept to mockup",
+      "Employee-only apparel: hoodies, jackets, and T-shirts from concept to mockup",
       "Weekly announcement and milestone graphics for internal communications",
       "Holiday and event posters maintaining brand cohesion across occasions",
     ],
@@ -116,7 +117,7 @@ export const projects: Project[] = [
     type: "Web Design",
     year: "2025",
     role: "Designer • Developer",
-    tools: ["Photoshop", "Illustrator", "After Effects", "React", "Tailwind CSS"],
+    tools: ["Photoshop", "Illustrator", "After Effects", "Cursor AI"],
     tags: ["Web Design", "UI/UX", "Brand Identity", "Animation"],
     cover: {
       alt: "Web design projects — Marina Woodcrafts and A1 Remodeling",
@@ -146,6 +147,7 @@ export const projects: Project[] = [
     tools: [
       "Premiere Pro",
       "After Effects",
+      "Photoshop",
       "ElevenLabs text to speech",
       "ElevenLabs Music Generator",
     ],
@@ -189,7 +191,14 @@ export const projects: Project[] = [
     type: "Video Editing",
     year: "2023–2026",
     role: "Director • Editor",
-    tools: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+    tools: [
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop",
+      "DaVinci Resolve",
+      "CapCut",
+      "ElevenLabs text to speech",
+    ],
     tags: ["Vlog", "Long-form", "Storytelling", "Facebook"],
     cover: {
       alt: "Long-form vlog collection shot on location since 2023",
@@ -199,6 +208,9 @@ export const projects: Project[] = [
       "A growing archive of long-form vlogs shot and edited since 2023 — travel, events, and everyday stories told with cinematic pacing and honest storytelling.",
     highlights: [
       "Self-directed and self-edited from capture to final cut",
+      "Sound and music design — mixes, ambience, and score choices shaped to match each story beat.",
+      "Thumbnail artwork — custom frames built to read clearly at small sizes and set the episode tone.",
+      "Voice-over — scripted narration edited for clarity, timing, and level so it sits cleanly in the mix.",
       "Consistent cinematic color grade across all episodes",
       "Paced for long-form retention with natural narrative structure",
       "Published continuously since 2023 across Facebook",
@@ -229,7 +241,12 @@ export const projects: Project[] = [
     type: "Video Editing",
     year: "2026",
     role: "Editor",
-    tools: ["Premiere Pro", "After Effects", "ElevenLabs text to speech"],
+    tools: [
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop",
+      "ElevenLabs text to speech",
+    ],
     tags: ["HR Platform", "Admin", "Product Demo"],
     cover: {
       alt: "HR admin portal platform overview and feature walkthrough",
@@ -253,7 +270,12 @@ export const projects: Project[] = [
     type: "Video Editing",
     year: "2026",
     role: "Editor",
-    tools: ["Premiere Pro", "After Effects", "ElevenLabs text to speech"],
+    tools: [
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop",
+      "ElevenLabs text to speech",
+    ],
     tags: ["HR Platform", "Demo Video", "Walkthrough"],
     cover: {
       alt: "Employee self-service panel walkthrough for an HR platform",
@@ -277,7 +299,12 @@ export const projects: Project[] = [
     type: "Video Editing",
     year: "2026",
     role: "Editor",
-    tools: ["Premiere Pro", "After Effects", "ElevenLabs text to speech"],
+    tools: [
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop",
+      "ElevenLabs text to speech",
+    ],
     tags: ["HR", "Onboarding", "Training"],
     cover: {
       alt: "Training agreement onboarding video for HR platform",
@@ -297,23 +324,28 @@ export const projects: Project[] = [
   },
   {
     slug: "12-days-of-xmas",
-    title: "12 Days of Christmas — Holiday Campaign",
+    title: "12 Days of Xmas — Game Announcement",
     type: "Motion Graphics",
     year: "2025",
     role: "Motion Designer • Editor",
-    tools: ["After Effects", "Premiere Pro", "ElevenLabs text to speech"],
+    tools: [
+      "After Effects",
+      "Premiere Pro",
+      "Photoshop",
+      "ElevenLabs text to speech",
+    ],
     tags: ["Holiday", "Social Media", "Campaign"],
     cover: {
-      alt: "12 Days of Christmas holiday campaign motion graphics",
+      alt: "12 Days of Xmas game announcement motion graphics",
       gradient: ["#7F1D1D", "#15803D"],
       thumbnail:
         "https://res.cloudinary.com/deuwal5fr/video/upload/v1777725702/12_day_of_Xmas_krbd6k.jpg",
     },
     summary:
-      "A festive 12-day holiday campaign series built for social media engagement, featuring branded motion graphics and seasonal storytelling.",
+      "A motion announcement for a twelve-day game event—each day unlocks a new puzzle for participants to solve, with pacing and visuals tuned for social engagement.",
     highlights: [
-      "12-part series structured for daily social media release",
-      "Festive motion graphics with consistent brand language",
+      "12-day structure with one puzzle reveal per day",
+      "Branded motion that tees up the daily challenge format",
       "Pacing and format optimized for short-form content platforms",
     ],
     videoEmbedUrl:
@@ -327,6 +359,7 @@ export const projects: Project[] = [
     role: "Motion Designer",
     tools: [
       "After Effects",
+      "Photoshop",
       "ElevenLabs text to speech",
       "ElevenLabs Music Generator",
     ],
@@ -340,6 +373,7 @@ export const projects: Project[] = [
     summary:
       "A kinetic motion graphics piece for WGS, capturing the energy of growth through typography, fluid transitions, and a tight audio-visual rhythm.",
     highlights: [
+      "Script and scene flow written from the client’s description—turning their brief into a clear, beat-by-beat motion arc",
       "Kinetic typography synchronized frame-perfect to audio",
       "Custom sound design to enhance the motion’s impact and pacing",
       "Seamless scene transitions using brand motion language",
@@ -354,7 +388,7 @@ export const projects: Project[] = [
     type: "Motion Graphics",
     year: "2024",
     role: "Motion Designer • Editor",
-    tools: ["After Effects", "Premiere Pro"],
+    tools: ["After Effects", "Premiere Pro", "Photoshop"],
     tags: ["Logo Animation", "Icon Transitions", "Glow FX"],
     cover: {
       alt: "Abstract neon gradients with dynamic light streaks",
@@ -378,7 +412,7 @@ export const projects: Project[] = [
     type: "Motion Graphics",
     year: "2020",
     role: "Editor • Motion Designer",
-    tools: ["Premiere Pro", "After Effects"],
+    tools: ["Premiere Pro", "After Effects", "Photoshop"],
     tags: ["Gaming", "Cinematic", "Trailer", "VFX"],
     cover: {
       alt: "Ragnarok Universal Server cinematic game trailer",
@@ -392,6 +426,7 @@ export const projects: Project[] = [
       "Dramatic cinematic pacing built to drive player excitement and server sign-ups",
       "VFX overlays and motion graphics layered on top of in-game footage",
       "Audio-synced cuts timed for maximum impact and energy",
+      "Sound and music design built to lift tension, hits, and release with the picture",
       "Delivered for community distribution across gaming forums and social platforms",
     ],
     videoEmbedUrl:

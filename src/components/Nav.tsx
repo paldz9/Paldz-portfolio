@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -43,7 +44,13 @@ export function Nav() {
       >
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 md:px-8">
           <Link href="/" className="group flex items-center gap-2.5">
-            <span className="size-2 rounded-full bg-[#17381D] transition-all duration-200 group-hover:scale-125" />
+            <Image
+              src="/Icon Green.png"
+              alt="Paldz logo"
+              width={28}
+              height={28}
+              className="transition-transform duration-200 group-hover:scale-110"
+            />
             <span className="text-sm font-semibold tracking-tight text-[#0D0D0B]">
               Paldz
             </span>

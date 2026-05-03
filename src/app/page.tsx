@@ -4,7 +4,20 @@ import { Reveal } from "@/components/Reveal";
 
 export default function HomePage() {
   const featured = projects.find((p) => p.slug === "wgs-growth")!;
-  const listed = projects;
+
+  const selectedSlugs = [
+    "marketing-reels",
+    "ef-posters",
+    "web-design",
+    "12-days-of-xmas",
+    "vlog-collection",
+    "ragnarok-universal-server",
+    "coffee-boi",
+    "wgs-akt-designs",
+  ];
+  const listed = selectedSlugs
+    .map((slug) => projects.find((p) => p.slug === slug))
+    .filter(Boolean) as typeof projects;
 
   return (
     <div>
@@ -53,7 +66,7 @@ export default function HomePage() {
           <span className="h-4 w-px bg-black/15" />
           <Link
             href="/contact"
-            className="rounded-full border border-black/10 px-5 py-2.5 text-sm font-semibold text-[#0D0D0B] transition-all hover:bg-black/[0.04]"
+            className="rounded-full bg-[#17381D] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-85"
           >
             Get in touch
           </Link>

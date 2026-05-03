@@ -7,6 +7,7 @@ import { getGalleryCategories } from "@/lib/gallery";
 import { Reveal } from "@/components/Reveal";
 import { Badge } from "@/components/ui";
 import { FacebookVideoCard } from "@/components/FacebookVideoCard";
+import { WebsitePreview } from "@/components/WebsitePreview";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -72,7 +73,7 @@ export default async function ProjectPage({
           {project.summary}
         </p>
 
-        {project.links?.[0] && (
+        {project.links?.[0] && project.type !== "Web Design" && (
           <div className="mt-8">
             <a
               href={project.links[0].href}
@@ -141,6 +142,49 @@ export default async function ProjectPage({
                 </div>
               )
             )}
+          </div>
+        </Reveal>
+      ) : project.type === "Web Design" && project.links?.length ? (
+        /* ── Web Design — site preview cards ── */
+        <Reveal>
+          <div className="mb-14 grid gap-4 sm:grid-cols-2">
+            {project.links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group relative overflow-hidden rounded-2xl border border-black/[0.08] bg-white p-6 transition-all hover:border-[#17381D]/30 hover:shadow-lg"
+              >
+                {/* gradient blob */}
+                <div
+                  className="absolute inset-0 opacity-[0.04] transition-opacity duration-300 group-hover:opacity-[0.07]"
+                  style={{
+                    background: `radial-gradient(ellipse at 20% 20%, ${from}ff, transparent 60%), radial-gradient(ellipse at 80% 80%, ${to}ff, transparent 60%)`,
+                  }}
+                />
+
+                <div className="relative flex flex-col gap-4">
+                  {/* live preview */}
+                  <WebsitePreview href={link.href} title={link.label} />
+
+                  {/* label + url + badge */}
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-[#0D0D0B] transition-colors group-hover:text-[#17381D]">
+                        {link.label}
+                      </p>
+                      <p className="mt-0.5 truncate text-[12px] text-[#8C8C8C]">
+                        {link.href.replace("https://", "")}
+                      </p>
+                    </div>
+                    <span className="shrink-0 rounded-full bg-[#17381D] px-3 py-1 text-[11px] font-semibold text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                      Visit ↗
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </Reveal>
       ) : (
@@ -239,7 +283,7 @@ export default async function ProjectPage({
               </div>
             </div>
 
-            {project.links?.length ? (
+            {project.links?.length && project.type !== "Web Design" ? (
               <div>
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#17381D]">
                   Links

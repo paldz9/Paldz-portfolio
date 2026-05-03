@@ -23,6 +23,11 @@ export const metadata: Metadata = {
       "Video editor, motion graphics, graphic designer, and web designer. Showreel, projects, and services.",
     type: "website",
   },
+  icons: {
+    icon: "/FavIcon.png",
+    shortcut: "/FavIcon.png",
+    apple: "/FavIcon.png",
+  },
   robots: { index: true, follow: true },
 };
 

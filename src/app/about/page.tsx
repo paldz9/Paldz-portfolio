@@ -92,7 +92,7 @@ const tools = [
   { name: "Adobe Premiere Pro", note: "Long-form editing & color" },
   { name: "Adobe Photoshop", note: "Graphic design & marketing assets" },
   { name: "Adobe Illustrator", note: "Brand assets & vector graphics" },
-  { name: "React + Tailwind CSS", note: "Web design & development" },
+  { name: "Cursor AI", note: "Web design & development" },
 ];
 
 const workStyle = [
